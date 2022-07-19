@@ -3,12 +3,16 @@ import Tweet from './CabinList';
 import cabinData from './data/cabin';
 
 function App(){
+  const cabinNameList = cabinData.map((data, index) => (
+    <li key={index}>{data.cabin} </li>
+  ))
   return (
       <ul>
-        {cabinData.map(data => (
-          <li>{data.cabin} </li>
+        {cabinData.map((data, index) => (
+          <li key={index}>{data.cabin} </li>
         ))}
       </ul>
+      
   );
   // const cabinNameList = cabinData.map((data) => {
   //   return <Tweet cabin={data.cabin} />
@@ -22,5 +26,6 @@ function App(){
   //   </div>
   // )
 }
+
 
 export default App;
