@@ -3,28 +3,17 @@ import Tweet from './CabinList';
 import cabinData from './data/cabin';
 
 function App(){
-  const cabinNameList = cabinData.map((data, index) => (
-    <li key={index}>{data.cabin} </li>
-  ))
-  return (
-      <ul>
-        {cabinData.map((data, index) => (
-          <li key={index}>{data.cabin} </li>
-        ))}
-      </ul>
-      
-  );
-  // const cabinNameList = cabinData.map((data) => {
-  //   return <Tweet cabin={data.cabin} />
-  // });
-  // return(
-  //   <div className='app'>
-  //     <ul>
-  //       <li>{cabinNameList} </li>
-  //     </ul>
-  //     {/* {cabinNameList} */}
-  //   </div>
-  // )
+
+const cabinNameList1 = cabinData.map(data => data.cabin)
+const cabinNames = [...new Set(cabinNameList1)] 
+const cabin = cabinNames.map((data, index)=> (
+  <li key={index}>{data}  </li>
+))
+return (
+  <ul>
+    {cabin}
+  </ul>
+)
 }
 
 
