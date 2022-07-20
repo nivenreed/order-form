@@ -7,11 +7,15 @@ function App(){
 const cabinNameList1 = cabinData.map(data => data.cabin)
 const cabinNames = [...new Set(cabinNameList1)] 
 const cabin = cabinNames.map((data, index)=> (
-  <li key={index}>{data}  </li>
+  <li>
+  <button key={index}>{data} </button>
+  </li>
+  // console.log();
+  // <li key={index}>{data}  </li>
 ))
 return (
   <ul>
-    {cabin}
+    <li>{cabin}</li>
   </ul>
 )
 }
