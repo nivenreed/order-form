@@ -37,6 +37,7 @@
       "last 1 safari version"
     ]
   },
+  "homepage": "https://nivenreed.github.io/order-form",
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }
