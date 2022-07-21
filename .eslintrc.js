@@ -2,11 +2,15 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: { jsx: true }
+    ecmaFeatures: { jsx: true },
+  },
+  globals: {
+    expect: true,
   },
   env: {
+    mocha: true,
     browser: true,
-    node: true
+    node: true,
   },
   extends: [
     'eslint:recommended',
@@ -18,7 +22,6 @@ module.exports = {
     // Prettier plugin and recommended rules
     'plugin:prettier/recommended',
     'prettier',
-    'plugin:@next/next/recommended'
   ],
   rules: {
     // Include .prettierrc.js rules
@@ -35,15 +38,14 @@ module.exports = {
         labelAttributes: [],
         controlComponents: [],
         assert: 'either',
-        depth: 25
-      }
+        depth: 25,
+      },
     ],
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-unused-vars': ['error']
+    '@typescript-eslint/no-unused-vars': ['warn'],
   },
   settings: {
     react: {
-      version: 'detect'
-    }
-  }
+      version: 'detect',
+    },
+  },
 };
