@@ -9,8 +9,6 @@ function App() {
                 <li key={index}>
                         <button>{data} </button>
                 </li>
-                // console.log();
-                // <li key={index}>{data}  </li>
         ));
         return <ul>{cabin}</ul>;
 }
