@@ -9,8 +9,8 @@ function CabinList() {
   const cabinNameList1 = cabinData.map((data) => data.cabin);
   const cabinNames = [...new Set(cabinNameList1)];
   const cabin = cabinNames.map((data, index) => (
-    <li key={index}>
-      <button key={index} onClick={click}>
+    <li className="cabinNameList" key={index}>
+      <button className="cabinListBtn" key={index} onClick={click}>
         {data}{' '}
       </button>
     </li>
