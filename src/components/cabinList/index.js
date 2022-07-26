@@ -1,6 +1,5 @@
 import React from 'react';
 import cabinData from '../../data/cabin';
-import '../../App.css';
 
 function CabinList() {
   const click = (data) => {
