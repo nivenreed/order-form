@@ -1,6 +1,5 @@
 import React from 'react';
-// import CabinList from './CabinList';
-import CabinList from './components/cabinList';
+import CabinList from './components/CabinList';
 
 function App() {
   return <CabinList />;
