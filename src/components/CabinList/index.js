@@ -22,20 +22,7 @@ function CabinList({ name }) {
   return (
     <>
       <h1>{cabinName ? cabinName : 'Select Cabin'}</h1>
-      <ul className="NameList">
-        {cabin}
-        {/* <li className="cabinNameList" key={index}>
-          <button
-            className={
-              data === cabinName ? 'cabinListBtnSelected' : 'cabinListBtn'
-            }
-            key={index}
-            onClick={() => click(data)}
-          >
-            {data}
-          </button>
-        </li> */}
-      </ul>
+      <ul className="NameList">{cabin}</ul>
     </>
   );
 }
