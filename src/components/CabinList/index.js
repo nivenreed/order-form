@@ -5,14 +5,13 @@ function CabinList({ name }) {
   const click = (data) => {
     setCabinName(data);
   };
-  const [cabinName, setCabinName] = useState('Select Cabin');
+  const [cabinName, setCabinName] = useState('');
   // const cabinNameList1 = cabinData.map((data) => data.cabin);
   // const cabinNames = [...new Set(cabinNameList1)];
   const cabin = name.map((data, index) => (
     <li className="cabinNameList" key={index}>
       <button
         className={data === cabinName ? 'cabinListBtnSelected' : 'cabinListBtn'}
-        key={index}
         onClick={() => click(data)}
       >
         {data}
@@ -22,7 +21,7 @@ function CabinList({ name }) {
 
   return (
     <>
-      <h1>{cabinName}</h1>
+      <h1>{cabinName ? cabinName : 'Select Cabin'}</h1>
       <ul className="NameList">
         {cabin}
         {/* <li className="cabinNameList" key={index}>
