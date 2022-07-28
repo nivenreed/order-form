@@ -5,7 +5,7 @@ function CabinList({ name }) {
   const click = (data) => {
     setSelectedCabinName(data);
   };
-  const [SelectedCabinName, setSelectedCabinName] = useState('');
+  const [selectedCabinName, setSelectedCabinName] = useState('');
   // const cabinNameList1 = cabinData.map((data) => data.cabin);
   // const cabinNames = [...new Set(cabinNameList1)];
   const cabin = name.map((data, index) => (
