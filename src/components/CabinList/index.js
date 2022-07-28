@@ -22,7 +22,9 @@ function CabinList({ cabinName, selectedCabinName, setSelectedCabinName }) {
   return (
     <>
       <h1>{selectedCabinName === '' ? 'select cabin' : selectedCabinName}</h1>
-      <ul className="nameList">{cabin}</ul>
+      <div className="divNameList">
+        <ul className="nameList">{cabin}</ul>
+      </div>
     </>
   );
 }

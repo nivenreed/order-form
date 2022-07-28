@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import CabinList from './components/CabinList';
+import Invoice from './components/invoice';
 import cabinData from './data/cabin';
 
 function App() {
@@ -10,11 +11,14 @@ function App() {
   // const cabin = cabinNames.map((data, index),
 
   return (
-    <CabinList
-      cabinName={cabinNames}
-      selectedCabinName={selectedCabinName}
-      setSelectedCabinName={setSelectedCabinName}
-    />
+    <>
+      <CabinList
+        cabinName={cabinNames}
+        selectedCabinName={selectedCabinName}
+        setSelectedCabinName={setSelectedCabinName}
+      />
+      <Invoice selectedCabinName={selectedCabinName} />
+    </>
   );
 }
 
