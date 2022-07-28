@@ -4,8 +4,7 @@ function CabinList({ cabinName, selectedCabinName, setSelectedCabinName }) {
   const click = (data) => {
     setSelectedCabinName(data);
   };
-  // const cabinNameList1 = cabinData.map((data) => data.cabin);
-  // const cabinNames = [...new Set(cabinNameList1)];
+
   const cabin = cabinName.map((data, index) => (
     <li className="cabinNameList" key={index}>
       <button

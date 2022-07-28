@@ -8,7 +8,6 @@ function App() {
   const [selectedCabinName, setSelectedCabinName] = useState('');
   const cabinNameList1 = cabinData.map((data) => data.cabin);
   const cabinNames = [...new Set(cabinNameList1)];
-  // const cabin = cabinNames.map((data, index),
 
   return (
     <>

@@ -7,7 +7,6 @@ function Invoice({ selectedCabinName }) {
         <tr>
           <th className="invoiceCabinName">Cabin Name</th>
           <th className="invoiceSize">Size</th>
-          {/* <th className="invoiceQty">Qty</th> */}
           <th className="invoicePrice">Price</th>
         </tr>
         <tr>
