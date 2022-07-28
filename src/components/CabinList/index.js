@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-import cabinData from '../../data/cabin';
+import React from 'react';
 
-function CabinList({ name }) {
+function CabinList({ cabinName, selectedCabinName, setSelectedCabinName }) {
   const click = (data) => {
     setSelectedCabinName(data);
   };
-  const [selectedCabinName, setSelectedCabinName] = useState('');
   // const cabinNameList1 = cabinData.map((data) => data.cabin);
   // const cabinNames = [...new Set(cabinNameList1)];
-  const cabin = name.map((data, index) => (
+  const cabin = cabinName.map((data, index) => (
     <li className="cabinNameList" key={index}>
       <button
         className={
-          data === SelectedCabinName ? 'cabinListBtnSelected' : 'cabinListBtn'
+          data === selectedCabinName ? 'cabinListBtnSelected' : 'cabinListBtn'
         }
         onClick={() => click(data)}
       >
@@ -23,8 +21,8 @@ function CabinList({ name }) {
 
   return (
     <>
-      <h1>{SelectedCabinName ? SelectedCabinName : 'Select Cabin'}</h1>
-      <ul className="NameList">{cabin}</ul>
+      <h1>{selectedCabinName === '' ? 'select cabin' : selectedCabinName}</h1>
+      <ul className="nameList">{cabin}</ul>
     </>
   );
 }
