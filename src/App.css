@@ -21,6 +21,11 @@
   border-radius: 20%;
   padding: 20px 20px;
 }
+.cabinListBtnSelected{
+  background-color: lightgrey;
+  border-radius: 20%;
+  padding: 20px 20px;
+}
 .ul{
   display: flex;
   flex-wrap: wrap;
@@ -28,4 +33,27 @@
 .li{
 
   flex: 33%;
+}
+.divNameList{
+  height: 100px;
+  width: 60%;
+  float: left;
+}
+.invoice{
+  width: 40%;
+  float: right;
+  padding-right: 20px;
+}
+table, th, td{
+  border: 1px solid;
+  text-align: center;
+}
+.invoiceCabinName{
+  width: 200px;
+}
+.invoiceSize{
+  width: 100px;
+}
+.invoicePrice{
+  width: 100px;
 }
