@@ -1,8 +1,14 @@
 import React from 'react';
 
-function CabinList({ cabinName, selectedCabinName, setSelectedCabinName }) {
+function CabinList({
+  cabinName,
+  selectedCabinName,
+  setSelectedCabinName,
+  setCurrentScreen,
+}) {
   const click = (data) => {
     setSelectedCabinName(data);
+    setCurrentScreen('cabinName');
   };
 
   const cabin = cabinName.map((data, index) => (
@@ -20,7 +26,7 @@ function CabinList({ cabinName, selectedCabinName, setSelectedCabinName }) {
 
   return (
     <>
-      <h1>{selectedCabinName === '' ? 'select cabin' : selectedCabinName}</h1>
+      <h1>Creative Living</h1>
       <div className="divNameList">
         <ul className="nameList">{cabin}</ul>
       </div>
