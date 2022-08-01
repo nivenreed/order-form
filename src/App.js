@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import CabinList from './components/CabinList';
-import CabinSize from './components/cabinSize';
+import CabinSize from './components/CabinSize';
 import Invoice from './components/invoice';
 import cabinData from './data/cabin';
 
