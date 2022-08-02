@@ -6,10 +6,23 @@ import Invoice from './components/invoice';
 import cabinData from './data/cabin';
 
 function App() {
+  // variables for CabinList
   const [selectedCabinName, setSelectedCabinName] = useState('');
   const [currentScreen, setCurrentScreen] = useState('');
-  const cabinNameList1 = cabinData.map((data) => data.cabin);
-  const cabinNames = [...new Set(cabinNameList1)];
+  const cabinNameList = cabinData.map((data) => data.cabin);
+  const cabinNames = [...new Set(cabinNameList)];
+
+  // variables for CabinSize
+  const [selectedWallOpt, setSelectedWallOpt] = useState('');
+  const filtered = cabinData.filter((data) => data.cabin === selectedCabinName);
+  const cabinWallOptions = filtered.map((data) => data.wallOptions);
+
+  const cabinSize = filtered.map((data) => {
+    return {
+      width: data.width,
+      depth: data.depth,
+    };
+  });
 
   return (
     <>
@@ -22,7 +35,15 @@ function App() {
           setCurrentScreen={setCurrentScreen}
         />
       )}
-      {currentScreen === 'cabinName' && <CabinSize />}
+      {currentScreen === 'cabinName' && (
+        <CabinSize
+          cabinWallOptions={cabinWallOptions}
+          filtered={filtered}
+          cabinSize={cabinSize}
+          setCurrentScreen={setCurrentScreen}
+          setSelectedWallOpt={setSelectedWallOpt}
+        />
+      )}
       <Invoice selectedCabinName={selectedCabinName} />
     </>
   );
