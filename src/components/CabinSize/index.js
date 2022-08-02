@@ -18,17 +18,13 @@ function CabinSize({
     setCurrentScreen('cabinSize');
   };
 
-  const displayCabinSize = cabinSize.map((data, index) => 
-    [size: { {data.width}m x {data.depth}m}, ]  
-  ;
-
-  // const displayCabinSize = cabinSize.map((data, index) => (
-  //   <li key={index}>
-  //     <button>
-  //       {data.width}m x {data.depth}m
-  //     </button>
-  //   </li>
-  // ));
+  const displayCabinSize = cabinSize.map((data, index) => (
+    <li key={index}>
+      <button>
+        {data.width}m x {data.depth}m
+      </button>
+    </li>
+  ));
 
   return (
     <>
