@@ -21,9 +21,8 @@ function CabinSize({
 
   const deDupeSize = [];
 
-  for (let i = 0; i <= cabinSize.length; i++) {
+  for (let i = 0; i <= cabinSize.length - 1; i++) {
     let value = cabinSize[i];
-    if (!value) continue;
     console.log('Is this in array?', value);
     const inArray = deDupeSize.find((i) => {
       // you can console.log in here if you need to
