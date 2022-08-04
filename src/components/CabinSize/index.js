@@ -23,19 +23,19 @@ function CabinSize({
 
   for (let i = 0; i <= cabinSize.length; i++) {
     let value = cabinSize[i];
-    // console.log(
-    //   deDupeSize.find((i) => i.width === value.width && i.depth === value.depth)
-    // );
-    if (
-      deDupeSize.find((i) => i.width !== value.width && i.depth !== value.depth)
-    )
+    if (!value) continue;
+    console.log('Is this in array?', value);
+    const inArray = deDupeSize.find((i) => {
+      // you can console.log in here if you need to
+      return i.width === value.width && i.depth === value.depth;
+    });
+    if (inArray === undefined) {
+      console.log("no, it's not inArray, adding");
       deDupeSize.push(value);
-    console.log(i.width === value);
-    // console.log('value', value);
-    // console.log('i', i);
-    // console.log('deDupe =', deDupeSize);
+    }
   }
-  const displayCabinSize = cabinSize.map((data, index) => (
+  console.log(deDupeSize);
+  const displayCabinSize = deDupeSize.map((data, index) => (
     <li key={index}>
       <button>
         {data.width}m x {data.depth}m
