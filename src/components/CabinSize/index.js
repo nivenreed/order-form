@@ -1,4 +1,5 @@
 import React from 'react';
+import CabinList from '../CabinList';
 
 function CabinSize({
   cabinWallOptions,
@@ -18,6 +19,22 @@ function CabinSize({
     setCurrentScreen('cabinSize');
   };
 
+  const deDupeSize = [];
+
+  for (let i = 0; i <= cabinSize.length; i++) {
+    let value = cabinSize[i];
+    // console.log(
+    //   deDupeSize.find((i) => i.width === value.width && i.depth === value.depth)
+    // );
+    if (
+      deDupeSize.find((i) => i.width !== value.width && i.depth !== value.depth)
+    )
+      deDupeSize.push(value);
+    console.log(i.width === value);
+    // console.log('value', value);
+    // console.log('i', i);
+    // console.log('deDupe =', deDupeSize);
+  }
   const displayCabinSize = cabinSize.map((data, index) => (
     <li key={index}>
       <button>
