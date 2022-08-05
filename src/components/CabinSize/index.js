@@ -1,22 +1,29 @@
 import React from 'react';
-import CabinList from '../CabinList';
 
 function CabinSize({
   cabinWallOptions,
   cabinSize,
   setSelectedWallOpt,
+  selectedWallOpt,
+  setSelectedSize,
   setCurrentScreen,
 }) {
+  const wallOptClick = (data) => {
+    setSelectedWallOpt(data);
+    // setCurrentScreen('cabinSize');
+    console.log('selectedWallOpt =', selectedWallOpt);
+  };
+
   const deDupeWallOpt = [...new Set(cabinWallOptions)];
   const displayWallOptions = deDupeWallOpt.map((data, index) => (
     <li className="cabinWallWallOpt" key={index}>
-      <button onClick={() => click(data)}>{data}mm</button>
+      <button onClick={() => wallOptClick(data)}>{data}mm</button>
     </li>
   ));
 
-  const click = (data) => {
-    setSelectedWallOpt(data);
-    setCurrentScreen('cabinSize');
+  const sizeClick = (data) => {
+    setSelectedSize(data);
+    // setCurrentScreen('cabinSize');
   };
 
   const deDupeSize = [];
@@ -36,7 +43,7 @@ function CabinSize({
   console.log(deDupeSize);
   const displayCabinSize = deDupeSize.map((data, index) => (
     <li key={index}>
-      <button>
+      <button onClick={() => sizeClick(data, data)}>
         {data.width}m x {data.depth}m
       </button>
     </li>

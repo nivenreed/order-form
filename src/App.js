@@ -14,6 +14,7 @@ function App() {
 
   // variables for CabinSize
   const [selectedWallOpt, setSelectedWallOpt] = useState('');
+  const [selectedSize, setSelectedSize] = useState('');
   const filtered = cabinData.filter((data) => data.cabin === selectedCabinName);
   const cabinWallOptions = filtered.map((data) => data.wallOptions);
 
@@ -22,6 +23,19 @@ function App() {
       width: data.width,
       depth: data.depth,
     };
+  });
+
+  // Invoice
+  const filteredPrice = cabinData.filter(
+    (data) =>
+      data.cabin === selectedCabinName &&
+      data.wallOptions === selectedWallOpt &&
+      data.width === selectedSize.width &&
+      data.depth === selectedSize.depth
+  );
+
+  const cabinPrice = filteredPrice.map((data) => {
+    return data.price;
   });
 
   return (
@@ -41,10 +55,17 @@ function App() {
           filtered={filtered}
           cabinSize={cabinSize}
           setCurrentScreen={setCurrentScreen}
+          selectedWallOpt={selectedWallOpt}
           setSelectedWallOpt={setSelectedWallOpt}
+          setSelectedSize={setSelectedSize}
         />
       )}
-      <Invoice selectedCabinName={selectedCabinName} />
+      <Invoice
+        selectedCabinName={selectedCabinName}
+        selectedWallOpt={selectedWallOpt}
+        selectedSize={selectedSize}
+        cabinPrice={cabinPrice}
+      />
     </>
   );
 }
