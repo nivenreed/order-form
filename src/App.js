@@ -3,6 +3,7 @@ import './App.css';
 import CabinList from './components/CabinList';
 import CabinSize from './components/CabinSize';
 import Invoice from './components/invoice';
+import OptionalExtras from './components/OptionalExtras';
 import cabinData from './data/cabin';
 
 function App() {
@@ -15,15 +16,20 @@ function App() {
   // variables for CabinSize
   const [selectedWallOpt, setSelectedWallOpt] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
-  const filtered = cabinData.filter((data) => data.cabin === selectedCabinName);
-  const cabinWallOptions = filtered.map((data) => data.wallOptions);
+  const filteredCabinName = cabinData.filter(
+    (data) => data.cabin === selectedCabinName
+  );
+  const cabinWallOptions = filteredCabinName.map((data) => data.wallOptions);
 
-  const cabinSize = filtered.map((data) => {
+  const cabinSize = filteredCabinName.map((data) => {
     return {
       width: data.width,
       depth: data.depth,
     };
   });
+  // Optional Extras
+  const [selectedRoofInsulation, setSelectedRoofInsulation] = useState(false);
+  const [selectedFloorInsulation, setSelectedFloorInsulation] = useState(false);
 
   // Invoice
   const filteredPrice = cabinData.filter(
@@ -36,6 +42,14 @@ function App() {
 
   const cabinPrice = filteredPrice.map((data) => {
     return data.price;
+  });
+
+  const roofInsulationPrice = filteredPrice.map((data) => {
+    return data.roofInsulation;
+  });
+
+  const floorInsulationPrice = filteredPrice.map((data) => {
+    return data.floorInsulation;
   });
 
   return (
@@ -52,7 +66,6 @@ function App() {
       {currentScreen === 'cabinName' && (
         <CabinSize
           cabinWallOptions={cabinWallOptions}
-          filtered={filtered}
           cabinSize={cabinSize}
           setCurrentScreen={setCurrentScreen}
           selectedWallOpt={selectedWallOpt}
@@ -60,11 +73,19 @@ function App() {
           setSelectedSize={setSelectedSize}
         />
       )}
+      <OptionalExtras
+        setSelectedRoofInsulation={setSelectedRoofInsulation}
+        setSelectedFloorInsulation={setSelectedFloorInsulation}
+      />
       <Invoice
         selectedCabinName={selectedCabinName}
         selectedWallOpt={selectedWallOpt}
         selectedSize={selectedSize}
         cabinPrice={cabinPrice}
+        selectedRoofInsulation={selectedRoofInsulation}
+        roofInsulationPrice={roofInsulationPrice}
+        floorInsulationPrice={floorInsulationPrice}
+        selectedFloorInsulation={selectedFloorInsulation}
       />
     </>
   );
