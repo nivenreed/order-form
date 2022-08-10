@@ -23,20 +23,18 @@ function CabinSize({
 
   const sizeClick = (data) => {
     setSelectedSize(data);
-    // setCurrentScreen('cabinSize');
+    setCurrentScreen('optionalExtras');
   };
 
   const deDupeSize = [];
 
   for (let i = 0; i <= cabinSize.length - 1; i++) {
     let value = cabinSize[i];
-    console.log('Is this in array?', value);
     const inArray = deDupeSize.find((i) => {
       // you can console.log in here if you need to
       return i.width === value.width && i.depth === value.depth;
     });
     if (inArray === undefined) {
-      console.log("no, it's not inArray, adding");
       deDupeSize.push(value);
     }
   }

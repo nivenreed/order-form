@@ -9,7 +9,10 @@ function Invoice({
   roofInsulationPrice,
   selectedFloorInsulation,
   floorInsulationPrice,
+  selectedWallInsulation,
+  wallInsulationPrice,
 }) {
+  const total = parseInt(cabinPrice) + parseInt(roofInsulationPrice);
   return (
     <div className="invoice">
       <table>
@@ -34,20 +37,35 @@ function Invoice({
             <td>£{cabinPrice}</td>
           </tr>
           <tr>
-            <td colSpan={3}>
-              {selectedRoofInsulation === true ? 'Roof Insulation' : ''}
-            </td>
-            <td>
-              {selectedRoofInsulation === true ? roofInsulationPrice : ''}
-            </td>
+            <th colSpan={4}>Optional Extras</th>
           </tr>
+          {selectedRoofInsulation && (
+            <tr>
+              <td colSpan={3}>
+                {selectedRoofInsulation ? 'Roof Insulation' : ''}
+              </td>
+              <td>£{selectedRoofInsulation ? roofInsulationPrice : ''}</td>
+            </tr>
+          )}
+          {selectedFloorInsulation && (
+            <tr>
+              <td colSpan={3}>
+                {selectedFloorInsulation ? 'Floor Insulation' : ''}
+              </td>
+              <td>£{selectedFloorInsulation ? floorInsulationPrice : ''}</td>
+            </tr>
+          )}
+          {selectedWallInsulation && (
+            <tr>
+              <td colSpan={3}>
+                {selectedWallInsulation ? 'Wall Insulation' : ''}
+              </td>
+              <td>£{selectedWallInsulation ? wallInsulationPrice : ''}</td>
+            </tr>
+          )}
           <tr>
-            <td colSpan={3}>
-              {selectedFloorInsulation === true ? 'Floor Insulation' : ''}
-            </td>
-            <td>
-              {selectedFloorInsulation === true ? floorInsulationPrice : ''}
-            </td>
+            <td colSpan={3}>Total</td>
+            <td>{total}</td>
           </tr>
         </tbody>
       </table>

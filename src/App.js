@@ -30,6 +30,7 @@ function App() {
   // Optional Extras
   const [selectedRoofInsulation, setSelectedRoofInsulation] = useState(false);
   const [selectedFloorInsulation, setSelectedFloorInsulation] = useState(false);
+  const [selectedWallInsulation, setSelectedWallInsulation] = useState(false);
 
   // Invoice
   const filteredPrice = cabinData.filter(
@@ -52,6 +53,10 @@ function App() {
     return data.floorInsulation;
   });
 
+  const wallInsulationPrice = filteredPrice.map((data) => {
+    return data.wallInsulation;
+  });
+
   return (
     <>
       {currentScreen === '' && (
@@ -63,7 +68,8 @@ function App() {
           setCurrentScreen={setCurrentScreen}
         />
       )}
-      {currentScreen === 'cabinName' && (
+      {(currentScreen === 'cabinName' ||
+        currentScreen === 'optionalExtras') && (
         <CabinSize
           cabinWallOptions={cabinWallOptions}
           cabinSize={cabinSize}
@@ -73,10 +79,14 @@ function App() {
           setSelectedSize={setSelectedSize}
         />
       )}
-      <OptionalExtras
-        setSelectedRoofInsulation={setSelectedRoofInsulation}
-        setSelectedFloorInsulation={setSelectedFloorInsulation}
-      />
+      {currentScreen === 'optionalExtras' && (
+        <OptionalExtras
+          setSelectedRoofInsulation={setSelectedRoofInsulation}
+          setSelectedFloorInsulation={setSelectedFloorInsulation}
+          selectedWallOpt={selectedWallOpt}
+          setSelectedWallInsulation={setSelectedWallInsulation}
+        />
+      )}
       <Invoice
         selectedCabinName={selectedCabinName}
         selectedWallOpt={selectedWallOpt}
@@ -86,6 +96,8 @@ function App() {
         roofInsulationPrice={roofInsulationPrice}
         floorInsulationPrice={floorInsulationPrice}
         selectedFloorInsulation={selectedFloorInsulation}
+        selectedWallInsulation={selectedWallInsulation}
+        wallInsulationPrice={wallInsulationPrice}
       />
     </>
   );
