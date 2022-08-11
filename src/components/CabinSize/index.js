@@ -38,7 +38,6 @@ function CabinSize({
       deDupeSize.push(value);
     }
   }
-  console.log(deDupeSize);
   const displayCabinSize = deDupeSize.map((data, index) => (
     <li key={index}>
       <button onClick={() => sizeClick(data, data)}>

@@ -28,6 +28,7 @@ function App() {
     };
   });
   // Optional Extras
+  const [selectedVeranda, setSelectedVeranda] = useState(false);
   const [selectedRoofInsulation, setSelectedRoofInsulation] = useState(false);
   const [selectedFloorInsulation, setSelectedFloorInsulation] = useState(false);
   const [selectedWallInsulation, setSelectedWallInsulation] = useState(false);
@@ -43,6 +44,10 @@ function App() {
 
   const cabinPrice = filteredPrice.map((data) => {
     return data.price;
+  });
+
+  const verandaPrice = filteredPrice.map((data) => {
+    return data.verandaAndBase;
   });
 
   const roofInsulationPrice = filteredPrice.map((data) => {
@@ -81,6 +86,7 @@ function App() {
       )}
       {currentScreen === 'optionalExtras' && (
         <OptionalExtras
+          setSelectedVeranda={setSelectedVeranda}
           setSelectedRoofInsulation={setSelectedRoofInsulation}
           setSelectedFloorInsulation={setSelectedFloorInsulation}
           selectedWallOpt={selectedWallOpt}
@@ -92,6 +98,8 @@ function App() {
         selectedWallOpt={selectedWallOpt}
         selectedSize={selectedSize}
         cabinPrice={cabinPrice}
+        selectedVeranda={selectedVeranda}
+        verandaPrice={verandaPrice}
         selectedRoofInsulation={selectedRoofInsulation}
         roofInsulationPrice={roofInsulationPrice}
         floorInsulationPrice={floorInsulationPrice}
