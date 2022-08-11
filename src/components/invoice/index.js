@@ -14,7 +14,7 @@ function Invoice({
   selectedWallInsulation,
   wallInsulationPrice,
 }) {
-  const invoiceCabinPrice = cabinPrice.length < 0 ? 0 : cabinPrice[0];
+  const invoiceCabinPrice = cabinPrice.length > 0 ? cabinPrice[0] : 0;
   const invoiceVerandaPrice = !selectedVeranda ? 0 : verandaPrice[0];
   const invoiceRoofInsulation = !selectedRoofInsulation
     ? 0
@@ -23,11 +23,10 @@ function Invoice({
     ? 0
     : floorInsulationPrice[0];
 
-  const total =
-    invoiceCabinPrice +
-    invoiceVerandaPrice +
-    invoiceRoofInsulation +
-    invoiceFloorInsulation;
+  const total = invoiceCabinPrice;
+  invoiceVerandaPrice + invoiceRoofInsulation + invoiceFloorInsulation;
+
+  console.log(invoiceCabinPrice);
 
   const deposit = total / 2;
   const balance = total - deposit;
