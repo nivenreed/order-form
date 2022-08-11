@@ -6,6 +6,9 @@ function OptionalExtras({
   setSelectedFloorInsulation,
   selectedWallOpt,
   setSelectedWallInsulation,
+  setSelectedBaseWork,
+  setSelectedAirCon,
+  setSelectedCabinInstallation,
 }) {
   const verandaClick = () => {
     setSelectedVeranda((current) => !current);
@@ -20,6 +23,17 @@ function OptionalExtras({
   const wallInsulationClick = () => {
     setSelectedWallInsulation((current) => !current);
   };
+  const cabinBaseWorkClick = () => {
+    setSelectedBaseWork((current) => !current);
+  };
+
+  const cabinInstallationClick = () => {
+    setSelectedCabinInstallation((current) => !current);
+  };
+
+  const airConClick = () => {
+    setSelectedAirCon((current) => !current);
+  };
 
   return (
     <div>
@@ -30,6 +44,12 @@ function OptionalExtras({
       {selectedWallOpt === '45+45' && (
         <button onClick={wallInsulationClick}>Wall Insulation</button>
       )}
+      <button onClick={cabinBaseWorkClick}>Cabin Structural Base</button>
+      <button onClick={cabinInstallationClick}>Cabin Installation</button>
+      <button onClick={airConClick}>Heating & Air-Con</button>
+      <p>
+        <button>-</button>Paint <button>+</button>
+      </p>
     </div>
   );
 }

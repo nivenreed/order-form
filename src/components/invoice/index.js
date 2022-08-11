@@ -13,6 +13,12 @@ function Invoice({
   floorInsulationPrice,
   selectedWallInsulation,
   wallInsulationPrice,
+  selectedBaseWork,
+  baseWorkPrice,
+  selectedAirCon,
+  airConPrice,
+  selectedCabinInstallation,
+  cabinInstallationPrice,
 }) {
   const invoiceCabinPrice = cabinPrice.length > 0 ? cabinPrice[0] : 0;
   const invoiceVerandaPrice = !selectedVeranda ? 0 : verandaPrice[0];
@@ -23,10 +29,27 @@ function Invoice({
     ? 0
     : floorInsulationPrice[0];
 
-  const total = invoiceCabinPrice;
-  invoiceVerandaPrice + invoiceRoofInsulation + invoiceFloorInsulation;
+  const invoiceWallInsulationPrice = !selectedWallInsulation
+    ? 0
+    : wallInsulationPrice[0];
 
-  console.log(invoiceCabinPrice);
+  const invoiceBaseWorkPrice = !selectedBaseWork ? 0 : baseWorkPrice[0];
+
+  const invoiceCabinInstallation = !selectedCabinInstallation
+    ? 0
+    : cabinInstallationPrice[0];
+
+  const invoiceAirConPrice = !selectedAirCon ? 0 : airConPrice;
+
+  const total =
+    invoiceCabinPrice +
+    invoiceVerandaPrice +
+    invoiceRoofInsulation +
+    invoiceFloorInsulation +
+    invoiceWallInsulationPrice +
+    invoiceBaseWorkPrice +
+    invoiceCabinInstallation +
+    invoiceAirConPrice;
 
   const deposit = total / 2;
   const balance = total - deposit;
@@ -78,7 +101,25 @@ function Invoice({
           {selectedWallInsulation && (
             <tr>
               <td colSpan={3}>{'Wall Insulation'}</td>
-              <td>£{wallInsulationPrice.toFixed(2)}</td>
+              <td>£{wallInsulationPrice[0].toFixed(2)}</td>
+            </tr>
+          )}
+          {selectedBaseWork && (
+            <tr>
+              <td colSpan={3}>{'Cabin Structural Base'}</td>
+              <td>£{baseWorkPrice[0].toFixed(2)}</td>
+            </tr>
+          )}
+          {selectedCabinInstallation && (
+            <tr>
+              <td colSpan={3}>{'Cabin Installation'}</td>
+              <td>£{cabinInstallationPrice[0].toFixed(2)}</td>
+            </tr>
+          )}
+          {selectedAirCon && (
+            <tr>
+              <td colSpan={3}>{'Heating & Air-Con'}</td>
+              <td>£{airConPrice.toFixed(2)}</td>
             </tr>
           )}
           <tr>

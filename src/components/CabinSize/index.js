@@ -10,8 +10,6 @@ function CabinSize({
 }) {
   const wallOptClick = (data) => {
     setSelectedWallOpt(data);
-    // setCurrentScreen('cabinSize');
-    console.log('selectedWallOpt =', selectedWallOpt);
   };
 
   const deDupeWallOpt = [...new Set(cabinWallOptions)];

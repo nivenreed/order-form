@@ -32,6 +32,10 @@ function App() {
   const [selectedRoofInsulation, setSelectedRoofInsulation] = useState(false);
   const [selectedFloorInsulation, setSelectedFloorInsulation] = useState(false);
   const [selectedWallInsulation, setSelectedWallInsulation] = useState(false);
+  const [selectedBaseWork, setSelectedBaseWork] = useState(false);
+  const [selectedAirCon, setSelectedAirCon] = useState(false);
+  const [selectedCabinInstallation, setSelectedCabinInstallation] =
+    useState(false);
 
   // Invoice
   const filteredPrice = cabinData.filter(
@@ -60,6 +64,16 @@ function App() {
 
   const wallInsulationPrice = filteredPrice.map((data) => {
     return data.wallInsulation;
+  });
+
+  const baseWorkPrice = filteredPrice.map((data) => {
+    return data.cabinBasework;
+  });
+
+  const airConPrice = 1495;
+
+  const cabinInstallationPrice = filteredPrice.map((data) => {
+    return data.cabinInstallation;
   });
 
   return (
@@ -91,6 +105,9 @@ function App() {
           setSelectedFloorInsulation={setSelectedFloorInsulation}
           selectedWallOpt={selectedWallOpt}
           setSelectedWallInsulation={setSelectedWallInsulation}
+          setSelectedBaseWork={setSelectedBaseWork}
+          setSelectedAirCon={setSelectedAirCon}
+          setSelectedCabinInstallation={setSelectedCabinInstallation}
         />
       )}
       <Invoice
@@ -106,6 +123,12 @@ function App() {
         selectedFloorInsulation={selectedFloorInsulation}
         selectedWallInsulation={selectedWallInsulation}
         wallInsulationPrice={wallInsulationPrice}
+        selectedBaseWork={selectedBaseWork}
+        baseWorkPrice={baseWorkPrice}
+        selectedAirCon={selectedAirCon}
+        airConPrice={airConPrice}
+        selectedCabinInstallation={selectedCabinInstallation}
+        cabinInstallationPrice={cabinInstallationPrice}
       />
     </>
   );
