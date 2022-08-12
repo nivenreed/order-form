@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 
 function CabinSize({
   cabinWallOptions,
@@ -14,9 +15,11 @@ function CabinSize({
 
   const deDupeWallOpt = [...new Set(cabinWallOptions)];
   const displayWallOptions = deDupeWallOpt.map((data, index) => (
-    <li className="cabinWallWallOpt" key={index}>
-      <button onClick={() => wallOptClick(data)}>{data}mm</button>
-    </li>
+    // <li className="cabinWallWallOpt" >
+    <button key={index} onClick={() => wallOptClick(data)}>
+      {data}mm
+    </button>
+    // </li>
   ));
 
   const sizeClick = (data) => {
@@ -37,20 +40,18 @@ function CabinSize({
     }
   }
   const displayCabinSize = deDupeSize.map((data, index) => (
-    <li key={index}>
-      <button onClick={() => sizeClick(data, data)}>
-        {data.width}m x {data.depth}m
-      </button>
-    </li>
+    <button key={index} onClick={() => sizeClick(data, data)}>
+      {data.width}m x {data.depth}m
+    </button>
   ));
 
   return (
     <>
-      <div>
-        <h1>Select Wall Thickness</h1>
-        <ul>{displayWallOptions}</ul>
-        <h1>Size</h1>
-        <ul>{displayCabinSize}</ul>
+      <div className="cabinSizesGrid">
+        <h2 className="spanTwo">Select Wall Thickness</h2>
+        {displayWallOptions}
+        <h2 className="spanTwo">Size</h2>
+        {displayCabinSize}
       </div>
     </>
   );

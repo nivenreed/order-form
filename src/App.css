@@ -1,30 +1,21 @@
-.app{
+/* .app{
   min-height: 100vh;
   max-height: 200px;
   height: 100px;
   background: lightblue;
   display: flex;
   justify-content: space-around;
+} */
+.mainContainer{
+  border: 3px solid #fff;
 }
-.cabinNameList{
-  height: 100px;
-  width: 300px;
-  background: white;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+.container{
+  width: 50%;
+  float: left;
 }
-.cabinListBtn{
-  background-color: lightblue;
-  border-radius: 20%;
-  padding: 20px 20px;
-}
-.cabinListBtnSelected{
-  background-color: lightgrey;
-  border-radius: 20%;
-  padding: 20px 20px;
+.container2{
+  width: 50%;
+  float: left;
 }
 .ul{
   display: flex;
@@ -34,16 +25,16 @@
 
   flex: 33%;
 }
-.divNameList{
+/* .divNameList{
   height: 100px;
   width: 60%;
   float: left;
-}
-.invoice{
+} */
+/* .invoice{
   width: 40%;
   float: right;
   padding-right: 20px;
-}
+} */
 table, th, td{
   border: 1px solid;
   text-align: center;

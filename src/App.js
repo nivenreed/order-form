@@ -78,58 +78,64 @@ function App() {
 
   return (
     <>
-      {currentScreen === '' && (
-        <CabinList
-          cabinName={cabinNames}
-          selectedCabinName={selectedCabinName}
-          setSelectedCabinName={setSelectedCabinName}
-          currentScreen={currentScreen}
-          setCurrentScreen={setCurrentScreen}
-        />
-      )}
-      {(currentScreen === 'cabinName' ||
-        currentScreen === 'optionalExtras') && (
-        <CabinSize
-          cabinWallOptions={cabinWallOptions}
-          cabinSize={cabinSize}
-          setCurrentScreen={setCurrentScreen}
-          selectedWallOpt={selectedWallOpt}
-          setSelectedWallOpt={setSelectedWallOpt}
-          setSelectedSize={setSelectedSize}
-        />
-      )}
-      {currentScreen === 'optionalExtras' && (
-        <OptionalExtras
-          setSelectedVeranda={setSelectedVeranda}
-          setSelectedRoofInsulation={setSelectedRoofInsulation}
-          setSelectedFloorInsulation={setSelectedFloorInsulation}
-          selectedWallOpt={selectedWallOpt}
-          setSelectedWallInsulation={setSelectedWallInsulation}
-          setSelectedBaseWork={setSelectedBaseWork}
-          setSelectedAirCon={setSelectedAirCon}
-          setSelectedCabinInstallation={setSelectedCabinInstallation}
-        />
-      )}
-      <Invoice
-        selectedCabinName={selectedCabinName}
-        selectedWallOpt={selectedWallOpt}
-        selectedSize={selectedSize}
-        cabinPrice={cabinPrice}
-        selectedVeranda={selectedVeranda}
-        verandaPrice={verandaPrice}
-        selectedRoofInsulation={selectedRoofInsulation}
-        roofInsulationPrice={roofInsulationPrice}
-        floorInsulationPrice={floorInsulationPrice}
-        selectedFloorInsulation={selectedFloorInsulation}
-        selectedWallInsulation={selectedWallInsulation}
-        wallInsulationPrice={wallInsulationPrice}
-        selectedBaseWork={selectedBaseWork}
-        baseWorkPrice={baseWorkPrice}
-        selectedAirCon={selectedAirCon}
-        airConPrice={airConPrice}
-        selectedCabinInstallation={selectedCabinInstallation}
-        cabinInstallationPrice={cabinInstallationPrice}
-      />
+      <div className="mainContainer">
+        <div className="container">
+          {currentScreen === '' && (
+            <CabinList
+              cabinName={cabinNames}
+              selectedCabinName={selectedCabinName}
+              setSelectedCabinName={setSelectedCabinName}
+              currentScreen={currentScreen}
+              setCurrentScreen={setCurrentScreen}
+            />
+          )}
+          {(currentScreen === 'cabinName' ||
+            currentScreen === 'optionalExtras') && (
+            <CabinSize
+              cabinWallOptions={cabinWallOptions}
+              cabinSize={cabinSize}
+              setCurrentScreen={setCurrentScreen}
+              selectedWallOpt={selectedWallOpt}
+              setSelectedWallOpt={setSelectedWallOpt}
+              setSelectedSize={setSelectedSize}
+            />
+          )}
+          {currentScreen === 'optionalExtras' && (
+            <OptionalExtras
+              setSelectedVeranda={setSelectedVeranda}
+              setSelectedRoofInsulation={setSelectedRoofInsulation}
+              setSelectedFloorInsulation={setSelectedFloorInsulation}
+              selectedWallOpt={selectedWallOpt}
+              setSelectedWallInsulation={setSelectedWallInsulation}
+              setSelectedBaseWork={setSelectedBaseWork}
+              setSelectedAirCon={setSelectedAirCon}
+              setSelectedCabinInstallation={setSelectedCabinInstallation}
+            />
+          )}
+        </div>
+        <div className="container2">
+          <Invoice
+            selectedCabinName={selectedCabinName}
+            selectedWallOpt={selectedWallOpt}
+            selectedSize={selectedSize}
+            cabinPrice={cabinPrice}
+            selectedVeranda={selectedVeranda}
+            verandaPrice={verandaPrice}
+            selectedRoofInsulation={selectedRoofInsulation}
+            roofInsulationPrice={roofInsulationPrice}
+            floorInsulationPrice={floorInsulationPrice}
+            selectedFloorInsulation={selectedFloorInsulation}
+            selectedWallInsulation={selectedWallInsulation}
+            wallInsulationPrice={wallInsulationPrice}
+            selectedBaseWork={selectedBaseWork}
+            baseWorkPrice={baseWorkPrice}
+            selectedAirCon={selectedAirCon}
+            airConPrice={airConPrice}
+            selectedCabinInstallation={selectedCabinInstallation}
+            cabinInstallationPrice={cabinInstallationPrice}
+          />
+        </div>
+      </div>
     </>
   );
 }

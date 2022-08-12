@@ -1,0 +1,5 @@
+.invoice{
+    min-height: 100px;
+    padding: 20px;
+    background-color: rgba(255,255, 255, .75);
+  }

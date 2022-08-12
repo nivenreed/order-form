@@ -1,0 +1,17 @@
+.optionalExtrasGrid{
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: 2rem repeat(2, 6rem);
+    justify-content: left;
+    padding-left: 10px;
+}
+.optionalExtrasGrid > button {
+    background-color: rgba(255, 255, 255, .75);
+    border: 1px solid white;
+    cursor: pointer;
+    outline: none;
+}
+.spanFour{
+    grid-column: span 4;
+}

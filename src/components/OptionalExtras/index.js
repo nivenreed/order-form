@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 
 function OptionalExtras({
   setSelectedVeranda,
@@ -36,8 +37,8 @@ function OptionalExtras({
   };
 
   return (
-    <div>
-      <h2>Optional Extras</h2>
+    <div className="optionalExtrasGrid">
+      <h2 className="spanFour">Optional Extras</h2>
       <button onClick={verandaClick}>Veranda & Base</button>
       <button onClick={roofInsulationClick}>Roof Insulation</button>
       <button onClick={floorInsulationClick}>Floor Insulation</button>

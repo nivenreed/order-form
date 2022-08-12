@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 
 function CabinList({
   cabinName,
@@ -12,24 +13,21 @@ function CabinList({
   };
 
   const cabin = cabinName.map((data, index) => (
-    <li className="cabinNameList" key={index}>
-      <button
-        className={
-          data === selectedCabinName ? 'cabinListBtnSelected' : 'cabinListBtn'
-        }
-        onClick={() => click(data)}
-      >
-        {data}
-      </button>
-    </li>
+    <button
+      key={index}
+      className={
+        data === selectedCabinName ? 'cabinListBtnSelected' : 'cabinListBtn'
+      }
+      onClick={() => click(data)}
+    >
+      {data}
+    </button>
   ));
 
   return (
     <>
       <h1>Creative Living</h1>
-      <div className="divNameList">
-        <ul className="nameList">{cabin}</ul>
-      </div>
+      <div className="cabinNameListGrid">{cabin}</div>
     </>
   );
 }
