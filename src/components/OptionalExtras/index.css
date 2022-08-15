@@ -12,6 +12,10 @@
     cursor: pointer;
     outline: none;
 }
+.optionalExtrasGrid > button:hover,
+.optionalExtrasGrid > button:hover{
+    background-color: rgba(255, 255, 255, .9);
+}
 .spanFour{
     grid-column: span 4;
 }

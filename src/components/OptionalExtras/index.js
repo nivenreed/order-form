@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import Quantity from './quantity';
 
 function OptionalExtras({
   setSelectedVeranda,
@@ -10,6 +11,11 @@ function OptionalExtras({
   setSelectedBaseWork,
   setSelectedAirCon,
   setSelectedCabinInstallation,
+  setIsQtyShown,
+  isQtyShown,
+  value,
+  setValue,
+  setSelectedPaint,
 }) {
   const verandaClick = () => {
     setSelectedVeranda((current) => !current);
@@ -36,6 +42,11 @@ function OptionalExtras({
     setSelectedAirCon((current) => !current);
   };
 
+  const paintClick = () => {
+    setIsQtyShown((current) => !current);
+    setSelectedPaint((current) => !current);
+  };
+  console.log(value);
   return (
     <div className="optionalExtrasGrid">
       <h2 className="spanFour">Optional Extras</h2>
@@ -48,9 +59,10 @@ function OptionalExtras({
       <button onClick={cabinBaseWorkClick}>Cabin Structural Base</button>
       <button onClick={cabinInstallationClick}>Cabin Installation</button>
       <button onClick={airConClick}>Heating & Air-Con</button>
-      <p>
-        <button>-</button>Paint <button>+</button>
-      </p>
+      <button>Preservative</button>
+      <button onClick={paintClick}>Paint</button>
+
+      {isQtyShown === true && <Quantity setValue={setValue} value={value} />}
     </div>
   );
 }

@@ -1,11 +1,4 @@
-/* .app{
-  min-height: 100vh;
-  max-height: 200px;
-  height: 100px;
-  background: lightblue;
-  display: flex;
-  justify-content: space-around;
-} */
+
 .mainContainer{
   border: 3px solid #fff;
 }
@@ -14,6 +7,7 @@
   float: left;
 }
 .container2{
+  height: 100%;
   width: 50%;
   float: left;
 }
@@ -25,16 +19,6 @@
 
   flex: 33%;
 }
-/* .divNameList{
-  height: 100px;
-  width: 60%;
-  float: left;
-} */
-/* .invoice{
-  width: 40%;
-  float: right;
-  padding-right: 20px;
-} */
 table, th, td{
   border: 1px solid;
   text-align: center;

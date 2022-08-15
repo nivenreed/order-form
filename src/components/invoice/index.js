@@ -20,6 +20,8 @@ function Invoice({
   airConPrice,
   selectedCabinInstallation,
   cabinInstallationPrice,
+  selectedPaint,
+  value,
 }) {
   const invoiceCabinPrice = cabinPrice.length > 0 ? cabinPrice[0] : 0;
   const invoiceVerandaPrice = !selectedVeranda ? 0 : verandaPrice[0];
@@ -41,6 +43,8 @@ function Invoice({
     : cabinInstallationPrice[0];
 
   const invoiceAirConPrice = !selectedAirCon ? 0 : airConPrice;
+
+  const paintPrice = value * 95;
 
   const total =
     invoiceCabinPrice +
@@ -121,6 +125,12 @@ function Invoice({
             <tr>
               <td colSpan={3}>{'Heating & Air-Con'}</td>
               <td>&pound;{airConPrice.toFixed(2)}</td>
+            </tr>
+          )}
+          {selectedPaint && (
+            <tr>
+              <td colSpan={3}>{'Paint'}</td>
+              <td>&pound;{paintPrice.toFixed(2)}</td>
             </tr>
           )}
           <tr>

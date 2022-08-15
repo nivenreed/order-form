@@ -36,6 +36,9 @@ function App() {
   const [selectedAirCon, setSelectedAirCon] = useState(false);
   const [selectedCabinInstallation, setSelectedCabinInstallation] =
     useState(false);
+  const [isQtyShown, setIsQtyShown] = useState(false);
+  const [value, setValue] = useState(0);
+  const [selectedPaint, setSelectedPaint] = useState(false);
 
   // Invoice
   const filteredPrice = cabinData.filter(
@@ -110,6 +113,11 @@ function App() {
               setSelectedBaseWork={setSelectedBaseWork}
               setSelectedAirCon={setSelectedAirCon}
               setSelectedCabinInstallation={setSelectedCabinInstallation}
+              setIsQtyShown={setIsQtyShown}
+              isQtyShown={isQtyShown}
+              value={value}
+              setValue={setValue}
+              setSelectedPaint={setSelectedPaint}
             />
           )}
         </div>
@@ -133,6 +141,8 @@ function App() {
             airConPrice={airConPrice}
             selectedCabinInstallation={selectedCabinInstallation}
             cabinInstallationPrice={cabinInstallationPrice}
+            selectedPaint={selectedPaint}
+            value={value}
           />
         </div>
       </div>
