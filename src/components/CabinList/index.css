@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C6C);
+}
+.cabinNameListGrid{
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: repeat(5, 6rem);
+    justify-content: left;
+    padding-left: 10px;
+}
+.cabinListBtn{
+    background-color: rgba(255, 255, 255, .75);
+    border: 1px solid white;
+    cursor: pointer;
+    outline: none;
+  }
+  .cabinListBtnSelected{
+    background-color: lightgrey;
+  }
+  .cabinListBtn:hover,
+  .cabinListBtn:hover{
+    background-color: rgba(255, 255, 255, .9);
+  }
