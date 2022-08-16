@@ -21,7 +21,11 @@ function Invoice({
   selectedCabinInstallation,
   cabinInstallationPrice,
   selectedPaint,
-  value,
+  paintQty,
+  preservativeQty,
+  isPreservativeQtyShown,
+  paintPrice,
+  preservativePrice,
 }) {
   const invoiceCabinPrice = cabinPrice.length > 0 ? cabinPrice[0] : 0;
   const invoiceVerandaPrice = !selectedVeranda ? 0 : verandaPrice[0];
@@ -44,7 +48,9 @@ function Invoice({
 
   const invoiceAirConPrice = !selectedAirCon ? 0 : airConPrice;
 
-  const paintPrice = value * 95;
+  const invoicePaintPrice = !paintPrice ? 0 : paintPrice;
+
+  const invoicePreservativePrice = !preservativePrice ? 0 : preservativePrice;
 
   const total =
     invoiceCabinPrice +
@@ -54,7 +60,9 @@ function Invoice({
     invoiceWallInsulationPrice +
     invoiceBaseWorkPrice +
     invoiceCabinInstallation +
-    invoiceAirConPrice;
+    invoiceAirConPrice +
+    invoicePaintPrice +
+    invoicePreservativePrice;
 
   const deposit = total / 2;
   const balance = total - deposit;
@@ -129,8 +137,18 @@ function Invoice({
           )}
           {selectedPaint && (
             <tr>
-              <td colSpan={3}>{'Paint'}</td>
+              <td>{'Paint'}</td>
+              <td>Qty</td>
+              <td>{paintQty}</td>
               <td>&pound;{paintPrice.toFixed(2)}</td>
+            </tr>
+          )}
+          {isPreservativeQtyShown && (
+            <tr>
+              <td>{'Preservative'}</td>
+              <td>Qty</td>
+              <td>{preservativeQty}</td>
+              <td>&pound;{preservativePrice.toFixed(2)}</td>
             </tr>
           )}
           <tr>

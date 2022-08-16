@@ -37,8 +37,10 @@ function App() {
   const [selectedCabinInstallation, setSelectedCabinInstallation] =
     useState(false);
   const [isQtyShown, setIsQtyShown] = useState(false);
-  const [value, setValue] = useState(0);
+  const [paintQty, setPaintQty] = useState(2);
   const [selectedPaint, setSelectedPaint] = useState(false);
+  const [isPreservativeQtyShown, setIsPreservativeQtyShown] = useState(false);
+  const [preservativeQty, setPreservativeQty] = useState(1);
 
   // Invoice
   const filteredPrice = cabinData.filter(
@@ -79,6 +81,10 @@ function App() {
     return data.cabinInstallation;
   });
 
+  const paintPrice = paintQty * 95;
+
+  const preservativePrice = preservativeQty * 35;
+
   return (
     <>
       <div className="mainContainer">
@@ -115,9 +121,13 @@ function App() {
               setSelectedCabinInstallation={setSelectedCabinInstallation}
               setIsQtyShown={setIsQtyShown}
               isQtyShown={isQtyShown}
-              value={value}
-              setValue={setValue}
+              paintQty={paintQty}
+              setPaintQty={setPaintQty}
               setSelectedPaint={setSelectedPaint}
+              isPreservativeQtyShown={isPreservativeQtyShown}
+              setIsPreservativeQtyShown={setIsPreservativeQtyShown}
+              preservativeQty={preservativeQty}
+              setPreservativeQty={setPreservativeQty}
             />
           )}
         </div>
@@ -142,7 +152,11 @@ function App() {
             selectedCabinInstallation={selectedCabinInstallation}
             cabinInstallationPrice={cabinInstallationPrice}
             selectedPaint={selectedPaint}
-            value={value}
+            paintQty={paintQty}
+            preservativeQty={preservativeQty}
+            isPreservativeQtyShown={isPreservativeQtyShown}
+            paintPrice={paintPrice}
+            preservativePrice={preservativePrice}
           />
         </div>
       </div>
