@@ -65,7 +65,7 @@ function OptionalExtras({
       <button onClick={cabinInstallationClick}>Cabin Installation</button>
       <button onClick={airConClick}>Heating & Air-Con</button>
       <button onClick={preservativeClick}>Preservative</button>
-      {isPreservativeQtyShown === true && (
+      {isPreservativeQtyShown && (
         <input
           type="number"
           name="quantity"
@@ -76,7 +76,7 @@ function OptionalExtras({
         />
       )}
       <button onClick={paintClick}>Paint</button>
-      {isQtyShown === true && (
+      {isQtyShown && (
         <input
           type="number"
           name="quantity"

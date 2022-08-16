@@ -81,9 +81,9 @@ function App() {
     return data.cabinInstallation;
   });
 
-  const paintPrice = paintQty * 95;
+  const paintPrice = !selectedPaint ? 0 : paintQty * 95;
 
-  const preservativePrice = preservativeQty * 35;
+  const preservativePrice = !isPreservativeQtyShown ? 0 : preservativeQty * 35;
 
   return (
     <>
