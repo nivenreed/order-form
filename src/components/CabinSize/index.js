@@ -5,7 +5,6 @@ function CabinSize({
   cabinWallOptions,
   cabinSize,
   setSelectedWallOpt,
-  selectedWallOpt,
   setSelectedSize,
   setCurrentScreen,
 }) {
@@ -15,11 +14,9 @@ function CabinSize({
 
   const deDupeWallOpt = [...new Set(cabinWallOptions)];
   const displayWallOptions = deDupeWallOpt.map((data, index) => (
-    // <li className="cabinWallWallOpt" >
     <button key={index} onClick={() => wallOptClick(data)}>
       {data}mm
     </button>
-    // </li>
   ));
 
   const sizeClick = (data) => {
@@ -32,7 +29,6 @@ function CabinSize({
   for (let i = 0; i <= cabinSize.length - 1; i++) {
     let value = cabinSize[i];
     const inArray = deDupeSize.find((i) => {
-      // you can console.log in here if you need to
       return i.width === value.width && i.depth === value.depth;
     });
     if (inArray === undefined) {

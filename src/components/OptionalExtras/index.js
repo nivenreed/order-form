@@ -75,7 +75,6 @@ function OptionalExtras({
           value={preservativeQty}
         />
       )}
-      {/* <div className="paint"> */}
       <button onClick={paintClick}>Paint</button>
       {isQtyShown === true && (
         <input
@@ -87,8 +86,6 @@ function OptionalExtras({
           value={paintQty}
         />
       )}
-      {/* </div> */}
-      {/* {isQtyShown === true && <Quantity setValue={setValue} value={value} />} */}
     </div>
   );
 }
