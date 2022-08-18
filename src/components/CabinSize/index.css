@@ -9,11 +9,29 @@
 .spanTwo{
     grid-column: span 4;
 }
-.cabinSizesGrid > button{
+.wallOptBtn{
+    background-color: rgba(255, 255, 255, .75);
+        border: 1px solid white;
+        cursor: pointer;
+        outline: none;
+}
+/* .cabinSizesGrid > button{
         background-color: rgba(255, 255, 255, .75);
         border: 1px solid white;
         cursor: pointer;
         outline: none;
+} */
+.cabinSizeBtn{
+    background-color: rgba(255, 255, 255, .75);
+        border: 1px solid white;
+        cursor: pointer;
+        outline: none;
+}
+.cabinSizeBtnSelected{
+    background-color: white;
+}
+.wallOptBtnSelected{
+    background-color: white;
 }
 .cabinSizesGrid > button:hover,
 .cabinSizesGrid > button:hover{

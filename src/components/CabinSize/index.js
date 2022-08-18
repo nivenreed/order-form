@@ -4,7 +4,9 @@ import './index.css';
 function CabinSize({
   cabinWallOptions,
   cabinSize,
+  selectedWallOpt,
   setSelectedWallOpt,
+  selectedSize,
   setSelectedSize,
   setCurrentScreen,
 }) {
@@ -14,7 +16,11 @@ function CabinSize({
 
   const deDupeWallOpt = [...new Set(cabinWallOptions)];
   const displayWallOptions = deDupeWallOpt.map((data, index) => (
-    <button key={index} onClick={() => wallOptClick(data)}>
+    <button
+      key={index}
+      className={data === selectedWallOpt ? 'wallOptBtnSelected' : 'wallOptBtn'}
+      onClick={() => wallOptClick(data)}
+    >
       {data}mm
     </button>
   ));
@@ -36,7 +42,15 @@ function CabinSize({
     }
   }
   const displayCabinSize = deDupeSize.map((data, index) => (
-    <button key={index} onClick={() => sizeClick(data, data)}>
+    <button
+      key={index}
+      className={
+        data.width === selectedSize.width && data.depth === selectedSize.depth
+          ? 'cabinSizeBtnSelected'
+          : 'cabinSizeBtn'
+      }
+      onClick={() => sizeClick(data, data)}
+    >
       {data.width}m x {data.depth}m
     </button>
   ));

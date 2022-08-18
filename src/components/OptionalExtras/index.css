@@ -6,11 +6,20 @@
     justify-content: left;
     padding-left: 10px;
 }
-.optionalExtrasGrid > button {
+/* .optionalExtrasGrid > button {
     background-color: rgba(255, 255, 255, .75);
     border: 1px solid white;
     cursor: pointer;
     outline: none;
+} */
+.optExtraBtn{
+    background-color: rgba(255, 255, 255, .75);
+    border: 1px solid white;
+    cursor: pointer;
+    outline: none;
+}
+.optExtraBtnSelected{
+    background-color: white;
 }
 .optionalExtrasGrid > button:hover,
 .optionalExtrasGrid > button:hover{
