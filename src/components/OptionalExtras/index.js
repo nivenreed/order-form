@@ -9,6 +9,7 @@ function OptionalExtras({
   setSelectedFloorInsulation,
   selectedFloorInsulation,
   selectedWallOpt,
+  selectedWallInsulation,
   setSelectedWallInsulation,
   setSelectedBaseWork,
   selectedBaseWork,
@@ -62,18 +63,14 @@ function OptionalExtras({
     <div className="optionalExtrasGrid">
       <h2 className="spanFour">Optional Extras</h2>
       <button
-        className={
-          selectedVeranda === true ? 'optExtraBtnSelected' : 'optExtraBtn'
-        }
+        className={selectedVeranda ? 'optExtraBtnSelected' : 'optExtraBtn'}
         onClick={verandaClick}
       >
         Veranda & Base
       </button>
       <button
         className={
-          selectedRoofInsulation === true
-            ? 'optExtraBtnSelected'
-            : 'optExtraBtn'
+          selectedRoofInsulation ? 'optExtraBtnSelected' : 'optExtraBtn'
         }
         onClick={roofInsulationClick}
       >
@@ -81,48 +78,45 @@ function OptionalExtras({
       </button>
       <button
         className={
-          selectedFloorInsulation === true
-            ? 'optExtraBtnSelected'
-            : 'optExtraBtn'
+          selectedFloorInsulation ? 'optExtraBtnSelected' : 'optExtraBtn'
         }
         onClick={floorInsulationClick}
       >
         Floor Insulation
       </button>
       {selectedWallOpt === '45+45' && (
-        <button onClick={wallInsulationClick}>Wall Insulation</button>
+        <button
+          className={
+            selectedWallInsulation ? 'optExtraBtnSelected' : 'optExtraBtn'
+          }
+          onClick={wallInsulationClick}
+        >
+          Wall Insulation
+        </button>
       )}
       <button
-        className={
-          selectedBaseWork === true ? 'optExtraBtnSelected' : 'optExtraBtn'
-        }
+        className={selectedBaseWork ? 'optExtraBtnSelected' : 'optExtraBtn'}
         onClick={cabinBaseWorkClick}
       >
         Cabin Structural Base
       </button>
       <button
         className={
-          selectedCabinInstallation === true
-            ? 'optExtraBtnSelected'
-            : 'optExtraBtn'
+          selectedCabinInstallation ? 'optExtraBtnSelected' : 'optExtraBtn'
         }
         onClick={cabinInstallationClick}
       >
         Cabin Installation
       </button>
       <button
-        className={
-          selectedAirCon === true ? 'optExtraBtnSelected' : 'optExtraBtn'
-        }
+        className={selectedAirCon ? 'optExtraBtnSelected' : 'optExtraBtn'}
         onClick={airConClick}
       >
         Heating & Air-Con
       </button>
       <button
         className={
-          isPreservativeQtyShown === true
-            ? 'optExtraBtnSelected'
-            : 'optExtraBtn'
+          isPreservativeQtyShown ? 'optExtraBtnSelected' : 'optExtraBtn'
         }
         onClick={preservativeClick}
       >
@@ -139,7 +133,7 @@ function OptionalExtras({
         />
       )}
       <button
-        className={isQtyShown === true ? 'optExtraBtnSelected' : 'optExtraBtn'}
+        className={isQtyShown ? 'optExtraBtnSelected' : 'optExtraBtn'}
         onClick={paintClick}
       >
         Paint

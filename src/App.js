@@ -118,6 +118,7 @@ function App() {
               setSelectedFloorInsulation={setSelectedFloorInsulation}
               selectedFloorInsulation={selectedFloorInsulation}
               selectedWallOpt={selectedWallOpt}
+              selectedWallInsulation={selectedWallInsulation}
               setSelectedWallInsulation={setSelectedWallInsulation}
               selectedBaseWork={selectedBaseWork}
               setSelectedBaseWork={setSelectedBaseWork}
