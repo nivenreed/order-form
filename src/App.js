@@ -107,17 +107,24 @@ function App() {
               selectedWallOpt={selectedWallOpt}
               setSelectedWallOpt={setSelectedWallOpt}
               setSelectedSize={setSelectedSize}
+              selectedSize={selectedSize}
             />
           )}
           {currentScreen === 'optionalExtras' && (
             <OptionalExtras
               setSelectedVeranda={setSelectedVeranda}
               setSelectedRoofInsulation={setSelectedRoofInsulation}
+              selectedRoofInsulation={selectedRoofInsulation}
               setSelectedFloorInsulation={setSelectedFloorInsulation}
+              selectedFloorInsulation={selectedFloorInsulation}
               selectedWallOpt={selectedWallOpt}
+              selectedWallInsulation={selectedWallInsulation}
               setSelectedWallInsulation={setSelectedWallInsulation}
+              selectedBaseWork={selectedBaseWork}
               setSelectedBaseWork={setSelectedBaseWork}
+              selectedAirCon={selectedAirCon}
               setSelectedAirCon={setSelectedAirCon}
+              selectedCabinInstallation={selectedCabinInstallation}
               setSelectedCabinInstallation={setSelectedCabinInstallation}
               setIsQtyShown={setIsQtyShown}
               isQtyShown={isQtyShown}
@@ -128,6 +135,7 @@ function App() {
               setIsPreservativeQtyShown={setIsPreservativeQtyShown}
               preservativeQty={preservativeQty}
               setPreservativeQty={setPreservativeQty}
+              selectedVeranda={selectedVeranda}
             />
           )}
         </div>
