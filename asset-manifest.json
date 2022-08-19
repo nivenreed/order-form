@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/order-form/static/css/main.ea8ddc3a.css",
+    "main.js": "/order-form/static/js/main.39d557f1.js",
+    "static/js/787.24194b0c.chunk.js": "/order-form/static/js/787.24194b0c.chunk.js",
+    "index.html": "/order-form/index.html",
+    "main.ea8ddc3a.css.map": "/order-form/static/css/main.ea8ddc3a.css.map",
+    "main.39d557f1.js.map": "/order-form/static/js/main.39d557f1.js.map",
+    "787.24194b0c.chunk.js.map": "/order-form/static/js/787.24194b0c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea8ddc3a.css",
+    "static/js/main.39d557f1.js"
+  ]
+}
