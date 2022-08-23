@@ -88,7 +88,13 @@ function Invoice({
               {selectedSize === '' ? 'Select Size ' : selectedSize.width}m x
               {selectedSize.depth}m
             </td>
-            <td>£{cabinPrice[0] !== undefined && cabinPrice[0].toFixed(2)}</td>
+            <td>
+              {cabinPrice[0] !== undefined &&
+                Intl.NumberFormat('en-UK', {
+                  style: 'currency',
+                  currency: 'GBP',
+                }).format(cabinPrice[0])}
+            </td>
           </tr>
           <tr>
             <th colSpan={4}>Optional Extras</th>
@@ -96,43 +102,78 @@ function Invoice({
           {selectedVeranda && (
             <tr>
               <td colSpan={3}>{'Veranda and Base'}</td>
-              <td>&pound;{verandaPrice[0].toFixed(2)}</td>
+              <td>
+                {Intl.NumberFormat('en-UK', {
+                  style: 'currency',
+                  currency: 'GBP',
+                }).format(verandaPrice[0])}
+              </td>
             </tr>
           )}
           {selectedRoofInsulation && (
             <tr>
               <td colSpan={3}>{'Roof Insulation'}</td>
-              <td>&pound;{roofInsulationPrice[0].toFixed(2)}</td>
+              <td>
+                {Intl.NumberFormat('en-UK', {
+                  style: 'currency',
+                  currency: 'GBP',
+                }).format(roofInsulationPrice[0])}
+              </td>
             </tr>
           )}
           {selectedFloorInsulation && (
             <tr>
               <td colSpan={3}>{'Floor Insulation'}</td>
-              <td>&pound;{floorInsulationPrice[0].toFixed(2)}</td>
+              <td>
+                {Intl.NumberFormat('en-UK', {
+                  style: 'currency',
+                  currency: 'GBP',
+                }).format(floorInsulationPrice[0])}
+              </td>
             </tr>
           )}
           {selectedWallInsulation && (
             <tr>
               <td colSpan={3}>{'Wall Insulation'}</td>
-              <td>&pound;{wallInsulationPrice[0].toFixed(2)}</td>
+              <td>
+                {Intl.NumberFormat('en-UK', {
+                  style: 'currency',
+                  currency: 'GBP',
+                }).format(wallInsulationPrice[0])}
+              </td>
             </tr>
           )}
           {selectedBaseWork && (
             <tr>
               <td colSpan={3}>{'Cabin Structural Base'}</td>
-              <td>&pound;{baseWorkPrice[0].toFixed(2)}</td>
+              <td>
+                {Intl.NumberFormat('en-UK', {
+                  style: 'currency',
+                  currency: 'GBP',
+                }).format(baseWorkPrice[0])}
+              </td>
             </tr>
           )}
           {selectedCabinInstallation && (
             <tr>
               <td colSpan={3}>{'Cabin Installation'}</td>
-              <td>&pound;{cabinInstallationPrice[0].toFixed(2)}</td>
+              <td>
+                {Intl.NumberFormat('en-UK', {
+                  style: 'currency',
+                  currency: 'GBP',
+                }).format(cabinInstallationPrice[0])}
+              </td>
             </tr>
           )}
           {selectedAirCon && (
             <tr>
               <td colSpan={3}>{'Heating & Air-Con'}</td>
-              <td>&pound;{airConPrice.toFixed(2)}</td>
+              <td>
+                {Intl.NumberFormat('en-UK', {
+                  style: 'currency',
+                  currency: 'GBP',
+                }).format(airConPrice)}
+              </td>
             </tr>
           )}
           {selectedPaint && (
@@ -140,7 +181,12 @@ function Invoice({
               <td>{'Paint'}</td>
               <td>Qty</td>
               <td>{paintQty}</td>
-              <td>&pound;{paintPrice.toFixed(2)}</td>
+              <td>
+                {Intl.NumberFormat('en-UK', {
+                  style: 'currency',
+                  currency: 'GBP',
+                }).format(paintPrice)}
+              </td>
             </tr>
           )}
           {isPreservativeQtyShown && (
@@ -148,20 +194,40 @@ function Invoice({
               <td>{'Preservative'}</td>
               <td>Qty</td>
               <td>{preservativeQty}</td>
-              <td>&pound;{preservativePrice.toFixed(2)}</td>
+              <td>
+                {Intl.NumberFormat('en-UK', {
+                  style: 'currency',
+                  currency: 'GBP',
+                }).format(preservativePrice)}
+              </td>
             </tr>
           )}
           <tr>
             <td colSpan={3}>Total</td>
-            <td>&pound;{total.toFixed(2)}</td>
+            <td>
+              {Intl.NumberFormat('en-UK', {
+                style: 'currency',
+                currency: 'GBP',
+              }).format(total)}
+            </td>
           </tr>
           <tr>
             <td colSpan={3}>Deposit</td>
-            <td>&pound;{deposit.toFixed(2)}</td>
+            <td>
+              {Intl.NumberFormat('en-UK', {
+                style: 'currency',
+                currency: 'GBP',
+              }).format(deposit)}
+            </td>
           </tr>
           <tr>
             <td colSpan={3}>Balance</td>
-            <td>&pound;{balance.toFixed(2)}</td>
+            <td>
+              {Intl.NumberFormat('en-UK', {
+                style: 'currency',
+                currency: 'GBP',
+              }).format(balance)}
+            </td>
           </tr>
         </tbody>
       </table>

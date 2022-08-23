@@ -5,6 +5,8 @@ import CabinSize from './components/CabinSize';
 import Invoice from './components/invoice';
 import OptionalExtras from './components/OptionalExtras';
 import cabinData from './data/cabin';
+import NextEdit from './components/EditButtons';
+import CustomerDetails from './components/CustomerDetails';
 
 function App() {
   // variables for CabinList
@@ -43,6 +45,8 @@ function App() {
   const [preservativeQty, setPreservativeQty] = useState(1);
 
   // Invoice
+  const [changeInvoiceClassName, setChangeInvoiceClassName] = useState(false);
+  console.log(changeInvoiceClassName);
   const filteredPrice = cabinData.filter(
     (data) =>
       data.cabin === selectedCabinName &&
@@ -139,33 +143,47 @@ function App() {
             />
           )}
         </div>
-        <div className="container2">
-          <Invoice
-            selectedCabinName={selectedCabinName}
-            selectedWallOpt={selectedWallOpt}
-            selectedSize={selectedSize}
-            cabinPrice={cabinPrice}
-            selectedVeranda={selectedVeranda}
-            verandaPrice={verandaPrice}
-            selectedRoofInsulation={selectedRoofInsulation}
-            roofInsulationPrice={roofInsulationPrice}
-            floorInsulationPrice={floorInsulationPrice}
-            selectedFloorInsulation={selectedFloorInsulation}
-            selectedWallInsulation={selectedWallInsulation}
-            wallInsulationPrice={wallInsulationPrice}
-            selectedBaseWork={selectedBaseWork}
-            baseWorkPrice={baseWorkPrice}
-            selectedAirCon={selectedAirCon}
-            airConPrice={airConPrice}
-            selectedCabinInstallation={selectedCabinInstallation}
-            cabinInstallationPrice={cabinInstallationPrice}
-            selectedPaint={selectedPaint}
-            paintQty={paintQty}
-            preservativeQty={preservativeQty}
-            isPreservativeQtyShown={isPreservativeQtyShown}
-            paintPrice={paintPrice}
-            preservativePrice={preservativePrice}
-          />
+        {/* <div className="container2"></div> */}
+        <div className={changeInvoiceClassName ? 'invoice' : 'container2'}>
+          {(currentScreen === '' ||
+            currentScreen === 'cabinName' ||
+            currentScreen === 'optionalExtras' ||
+            currentScreen === 'quote') && (
+            <Invoice
+              selectedCabinName={selectedCabinName}
+              selectedWallOpt={selectedWallOpt}
+              selectedSize={selectedSize}
+              cabinPrice={cabinPrice}
+              selectedVeranda={selectedVeranda}
+              verandaPrice={verandaPrice}
+              selectedRoofInsulation={selectedRoofInsulation}
+              roofInsulationPrice={roofInsulationPrice}
+              floorInsulationPrice={floorInsulationPrice}
+              selectedFloorInsulation={selectedFloorInsulation}
+              selectedWallInsulation={selectedWallInsulation}
+              wallInsulationPrice={wallInsulationPrice}
+              selectedBaseWork={selectedBaseWork}
+              baseWorkPrice={baseWorkPrice}
+              selectedAirCon={selectedAirCon}
+              airConPrice={airConPrice}
+              selectedCabinInstallation={selectedCabinInstallation}
+              cabinInstallationPrice={cabinInstallationPrice}
+              selectedPaint={selectedPaint}
+              paintQty={paintQty}
+              preservativeQty={preservativeQty}
+              isPreservativeQtyShown={isPreservativeQtyShown}
+              paintPrice={paintPrice}
+              preservativePrice={preservativePrice}
+            />
+          )}
+          <div>
+            <NextEdit
+              setCurrentScreen={setCurrentScreen}
+              currentScreen={currentScreen}
+              setChangeInvoiceClassName={setChangeInvoiceClassName}
+            />
+            <CustomerDetails />
+          </div>
         </div>
       </div>
     </>
